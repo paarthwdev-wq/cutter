@@ -2,6 +2,14 @@
 Main entrypoint for Telegram AI Video Clipper Bot.
 """
 import sys
+import os
+from pathlib import Path
+
+# Add project root and /app to sys.path
+root_dir = str(Path(__file__).resolve().parent.parent)
+if root_dir not in sys.path:
+    sys.path.insert(0, root_dir)
+
 import logging
 from telegram_clipper.telegram_bot.bot import build_application
 from telegram_clipper.config.settings import TELEGRAM_BOT_TOKEN

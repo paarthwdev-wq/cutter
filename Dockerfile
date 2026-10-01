@@ -20,7 +20,8 @@ COPY . .
 
 # Expose port (Render sets $PORT dynamically)
 ENV PORT=10000
+ENV PYTHONPATH=/app
 EXPOSE 10000
 
 # Start bot via runner
-CMD ["python", "telegram_clipper/main.py"]
+CMD ["python", "-m", "telegram_clipper.main"]
