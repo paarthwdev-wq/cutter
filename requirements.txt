@@ -1,0 +1,6 @@
+python-telegram-bot==22.8
+yt-dlp>=2026.08.0
+google-genai>=2.25.0
+imageio-ffmpeg>=0.6.0
+youtube-transcript-api>=1.2.4
+python-dotenv>=1.2.2

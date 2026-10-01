@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: telegram-ai-video-clipper
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: OUTPUT_RESOLUTION
+        value: 540x960
+      - key: AUTO_CLEANUP
+        value: "1"

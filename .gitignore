@@ -1,0 +1,14 @@
+.env
+node_modules/
+dist/
+logs/
+data/
+storage_temp/
+reports_archive/
+scratch/
+test_e2e_workspace/
+storage_temp_test/
+*.pdf
+__pycache__/
+*.pyc
+.specify/
