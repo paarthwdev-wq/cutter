@@ -30,24 +30,24 @@ def run_health_server():
 
 def main():
     print("=" * 60)
-    print(" 🚀 Telegram AI Video Clipping Bot (Render & Cloud Ready)")
+    print(" [READY] Telegram AI Video Clipping Bot (Render & Cloud Ready)")
     print("=" * 60)
 
     # Start health server on Render $PORT in background thread
     if os.environ.get("PORT"):
         t = threading.Thread(target=run_health_server, daemon=True)
         t.start()
-        print(f"🌐 Cloud Health Check Server running on port {os.environ.get('PORT')}")
+        print(f"[*] Cloud Health Check Server running on port {os.environ.get('PORT')}")
 
     if not TELEGRAM_BOT_TOKEN or TELEGRAM_BOT_TOKEN == "your_telegram_bot_token_here":
-        print("\n❌ ERROR: TELEGRAM_BOT_TOKEN is missing or not configured in .env.")
+        print("\n[ERROR] TELEGRAM_BOT_TOKEN is missing or not configured in .env.")
         print("Please edit .env and provide your Telegram Bot Token obtained from @BotFather.")
         print("Example:\n  TELEGRAM_BOT_TOKEN=123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ\n")
         sys.exit(1)
 
-    print("🤖 Initializing Telegram bot polling engine...")
+    print("[*] Initializing Telegram bot polling engine...")
     app = build_application()
-    print("✅ Bot is online and listening for messages! Press Ctrl+C to stop.")
+    print("[SUCCESS] Bot is online and listening for messages! Press Ctrl+C to stop.")
     app.run_polling()
 
 if __name__ == "__main__":
